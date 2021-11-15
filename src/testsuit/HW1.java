@@ -66,7 +66,7 @@ public class HW1 extends BaseTest{
         String actuelResult5 = seven.getText();
         Assert.assertEquals("Your are not on Computer Page", expectedResult5, actuelResult5);
 
-        
+
         driver.findElement(By.linkText("Gift Cards")).click();
         String expectedResult6 = "Gift Cards";
         WebElement eight = driver.findElement(By.xpath("//h1[contains(text(),'Gift Cards')]"));

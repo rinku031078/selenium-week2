@@ -1,5 +1,6 @@
 package testsuit;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -21,6 +22,13 @@ public class HW3 extends BaseTest{
         driver.findElement(By.xpath("//input[@id='passwd']")).sendKeys("fcr12");
         driver.findElement(By.xpath("//button[@id='SubmitLogin']")).click();
 
+        String expectedMessage = "There is 1 error";
+
+        WebElement message = driver.findElement(By.xpath("//p[contains(text(),'There is 1 error')]"));
+        String actualmessage = message.getText();
+
+        Assert.assertEquals("There is 1 error",expectedMessage, actualmessage);
+        System.out.println(message.getText());
 
     }
 }
